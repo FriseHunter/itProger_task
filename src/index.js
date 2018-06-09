@@ -5,8 +5,9 @@ import './App.css';
 import Block from './Description';
 import App from './App';
 import Game from "./Game/Game";
-import Events from './Events/Events'
+// import Events from './Events/Events';
 import registerServiceWorker from './registerServiceWorker';
+import Field from './Events/Events';
 
 
 const mainEl = document.getElementById('root');
@@ -21,14 +22,7 @@ ReactDOM.render(
         <Game className="game" name='Ultimate Mortal Combat 3' age='14+'/>
         <Game className="game" name='Sonic 3' age='7+'/>
     </div>
-    <div className="d-flex">
-    <Events>Купить картошки</Events>
-    <Events>Постирать носки</Events>
-    <Events>Погладить Яшу</Events>
-    </div>
-    <div className="d-flex">
-    <Events>Сварить ужин</Events>
-    </div>
+    <Field/>
 </div>,
  mainEl);
 registerServiceWorker();

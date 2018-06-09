@@ -19,14 +19,16 @@ class Events extends Component{
         edit(){
             this.setState({edit:true});
         }
+        task_del () {
+           this.props.del (this.props.index);
+        }
         save(){
-            var value = this.refs.newTxt.value;
-            alert(value);
+            this.props.upp (this.refs.newTxt.value, this.props.index)
             this.setState({
                 edit: false,
             });
         };
-        
+
         rendEdit(){
             return(
                 <div className='box'>
@@ -44,12 +46,10 @@ class Events extends Component{
                 </div>
             );
         };
-        
-        task_del () {
-            alert('Нажата кнопка "Удалить"');
-        };
-        
-        
+
+
+
+
 
     render(){
         if(this.state.edit){
@@ -57,9 +57,53 @@ class Events extends Component{
         }else{
             return this.rendNorm();
         }
-       
-        
+
+
     }
 };
 
-export default Events;
+class Field extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      tasks: []
+
+    };
+    this.uppTxt = this.uppTxt.bind(this);
+    this.delBlock = this.delBlock.bind(this);
+    this.add = this.add.bind(this);
+
+  }
+  add = (text) => {
+    var arr = this.state.tasks;
+    arr.push(text);
+    this.setState ({tasks: arr});
+  }
+  delBlock = (i) => {
+    var arr = this.state.tasks;
+    arr.splice(i, 1);
+    this.setState({tasks: arr});
+  }
+  uppTxt = (text, i) => {
+    var arr = this.state.tasks;
+    arr[i] = text;
+    this.setState ({tasks: arr});
+  }
+  eachTask = (item, i) => {
+    return(<Events key={i} index={i} upp={this.uppTxt} del={this.delBlock}>
+      {item}
+      </Events>);
+  };
+  render(){
+    return(
+      <div className="d-block">
+        {
+          this.state.tasks.map(this.eachTask)
+        }
+        <button onClick={this.add.bind(null, 'Простое задание')} className='btn btnLinear'>Создать задачу</button>
+      </div>
+    )
+  }
+}
+
+export default Field;

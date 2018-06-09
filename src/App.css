@@ -1,9 +1,12 @@
 .App {
   text-align: center;
 }
+.d-block{
+  display: block;
+}
 .d-flex{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
