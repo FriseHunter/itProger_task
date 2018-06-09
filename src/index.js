@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './App.css';
 import App from './App';
-// import Events from './Events/Events';
 import registerServiceWorker from './registerServiceWorker';
 import Field from './Events/Events';
 
