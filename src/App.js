@@ -5,7 +5,9 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <h1>Hi, it is you !</h1>
+      <div className='t-a-c'>
+      <h1 className='mx-auto'>Распланируй своё время</h1>
+      </div>
     );
   }
 }

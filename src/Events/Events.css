@@ -1,9 +1,9 @@
 .box{
     padding: 25px 10px;
-    margin: 25px 0;
+    margin: 25px auto;
     text-align: center;
     font-family: sans-serif;
-    max-width: 33.3333333%;
+    width: 30%;
     max-height: 100px;
     border-radius: 5px;
     box-shadow: 0 0 15px #5559;
@@ -50,4 +50,7 @@
     width: 100%;
     border:0;
     background: #eeee;
+}
+.t-a-c{
+  text-align: center;
 }

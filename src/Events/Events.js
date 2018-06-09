@@ -46,11 +46,6 @@ class Events extends Component{
                 </div>
             );
         };
-
-
-
-
-
     render(){
         if(this.state.edit){
             return this.rendEdit();
@@ -96,7 +91,7 @@ class Field extends Component{
   };
   render(){
     return(
-      <div className="d-block">
+      <div className='t-a-c'>
         {
           this.state.tasks.map(this.eachTask)
         }
