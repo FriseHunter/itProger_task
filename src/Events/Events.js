@@ -41,7 +41,7 @@ class Events extends Component{
             return(
                 <div className='box'>
                     <div className="text">{this.props.children}</div>
-                    <button onClick={this.edit} className='btn btnLinear'>Редакктировать</button>
+                    <button onClick={this.edit} className='btn btnLinear'>Редактировать</button>
                     <button onClick={this.task_del} className='btn btnSolid'>Удалить</button>
                 </div>
             );
